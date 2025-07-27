@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Home, Rss } from "lucide-react";
+import { Coffee, Home, Notebook, Rss } from "lucide-react";
 
 export const DATA = {
   name: "Tanav Poswal",
@@ -10,19 +10,26 @@ export const DATA = {
   description:
     "Software Engineer | Indie Hacker | Building fast, real-time, useful things. I turn ideas into products and code into value. Let's connect.",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    "In 2025, I went all-in on building and learning by doing. I’m currently pursuing a degree in AI & ML, have solved 300+ LeetCode problems, won a hackathon, and built tools to help the student community. I interned at Block Se Block, where I worked on Bitcoin smart contracts, trading infrastructure, and explored Rust and the ICP blockchain. I'm passionate about real-time systems, clean software, and constantly shipping. Very active on Twitter.",
   avatarUrl: "/me.png",
   skills: [
     "React",
     "Next.js",
     "Typescript",
     "Node.js",
+    "Solidity",
     "Python",
+    "Convex",
     "Go",
     "Rust",
+    "Machine Learning",
+    "Flask",
+    "Keras",
+    "Open CV",
+    "Tensorflow",
+    "Langchain",
     "Postgres",
     "Docker",
-    "Kubernetes",
     "AWS",
     "Java",
     "C++",
@@ -30,6 +37,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: Home, label: "Home" },
     { href: "/blog", icon: Rss, label: "Blog" },
+    { href: "https://dub.sh/tanav-resume", icon: Notebook, label: "Resume" },
   ],
   contact: {
     email: "tanavposwal939@example.com",
@@ -56,12 +64,19 @@ export const DATA = {
 
         navbar: true,
       },
-      email: {
+      "Buy me a Coffee": {
+        name: "Buy me a Coffee",
+        url: "https://coff.ee/tanav",
+        icon: Coffee,
+
+        navbar: true,
+      },
+      Email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:tanavposwal939@example.com",
         icon: Icons.email,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -92,126 +107,123 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Flow Code",
+      href: "https://flowcode-tnv.vercel.app/",
+      dates: "Feb 2025",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "An AI code editor that allows users to write and edit code in various programming languages from a AI agent.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "AI SDK",
         "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "Fine tuning",
+        "Monaco",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
+          href: "https://flowcode-tnv.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          href: "https://github.com/thetanav/flowcode",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/flowcode.png",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "Chess",
+      href: "",
+      dates: "November 2024",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+        "Multiplayer chess game with game states saving on postgresql. Chess game enginer with chess.js.",
       technologies: [
         "Next.js",
         "Typescript",
         "PostgreSQL",
         "Prisma",
+        "Turborepo",
+        "WebSockets",
+        "Auth0",
+        "Express",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/thetanav/chess",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/chess.png",
+    },
+    {
+      title: "TeamUpp",
+      href: "https://teamupp.vercel.app",
+      dates: "July 2025",
+      active: true,
+      description:
+        "Developed an social media app for hackers to meet new people and collaborate on projects or hackthons.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "AI SDK",
+        "PostgreSQL",
+        "Prisma",
         "TailwindCSS",
         "Shadcn UI",
         "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Neon DB",
       ],
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
+          href: "https://teamupp.vercel.app",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
+          href: "https://github.com/thetanav/teamup",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      image: "/teamupp.png",
     },
     {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
+      title: "Trading Exchange",
+      href: "https://trading-system-theta.vercel.app/",
+      dates: "Jan 2025",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "Trading exchange with order matching engine on rest api and websockets. User can create account and buy and sell stocks.",
       technologies: [
         "Next.js",
         "Typescript",
         "PostgreSQL",
         "Prisma",
         "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Express",
+        "JWT",
+        "WebSockets",
+        "CI-CD",
       ],
       links: [
         {
           type: "Website",
-          href: "https://automatic.chat",
+          href: "https://trading-system-theta.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Source",
+          href: "https://github.com/thetanav/trading-system",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      image: "/tradex.png",
     },
   ],
   hackathons: [

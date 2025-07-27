@@ -1,9 +1,10 @@
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { RainbowAvatar } from "@/components/ui/rainbow-avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -25,16 +26,18 @@ export default function Page() {
                 text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="max-w-[500px] md:text-lg text-sm"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <RainbowAvatar
+                src={DATA.avatarUrl}
+                alt={DATA.name}
+                fallback={DATA.initials}
+                size="lg"
+              />
             </BlurFade>
           </div>
         </div>
@@ -144,8 +147,6 @@ export default function Page() {
                   dates={project.dates}
                   tags={project.technologies}
                   image={project.image}
-                  video={project.video}
-                  links={project.links}
                 />
               </BlurFade>
             ))}
@@ -164,12 +165,10 @@ export default function Page() {
                   I like building things
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  I attended {DATA.hackathons.length}+ hackathons. Teams would
+                  come together and build incredible things in 2-3 days. It was
+                  eye-opening to see the endless possibilities brought to life
+                  by a group of motivated and passionate individuals.
                 </p>
               </div>
             </div>
@@ -187,7 +186,6 @@ export default function Page() {
                     location={project.location}
                     dates={project.dates}
                     image={project.image}
-                    links={project.links}
                   />
                 </BlurFade>
               ))}
