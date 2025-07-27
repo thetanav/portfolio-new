@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque as FontSans } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -62,22 +63,24 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
-            <div className="relative z-10 max-w-2xl mx-auto py-12 sm:py-24 px-6">
-              {children}
-              <Navbar />
-            </div>
-            <RetroGrid
-              className="fixed inset-0 z-0"
-              angle={45}
-              cellSize={80}
-              opacity={1}
-              lightLineColor="#e5e5e5"
-              darkLineColor="#404040"
-            />
-          </TooltipProvider>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <TooltipProvider delayDuration={0}>
+              <div className="relative z-10 max-w-2xl mx-auto py-12 sm:py-24 px-6">
+                {children}
+                <Navbar />
+              </div>
+              <RetroGrid
+                className="fixed inset-0 z-0"
+                angle={45}
+                cellSize={80}
+                opacity={1}
+                lightLineColor="#e5e5e5"
+                darkLineColor="#404040"
+              />
+            </TooltipProvider>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
