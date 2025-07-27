@@ -1,10 +1,11 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { RetroGrid } from "@/components/magicui/retro-grid";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Bricolage_Grotesque as FontSans } from "next/font/google";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -57,14 +58,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
+          "min-h-screen bg-background font-sans antialiased relative",
+          fontSans.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {children}
-            <Navbar />
+            <div className="relative z-10 max-w-2xl mx-auto py-12 sm:py-24 px-6">
+              {children}
+              <Navbar />
+            </div>
+            <RetroGrid
+              className="fixed inset-0 z-0"
+              angle={45}
+              cellSize={80}
+              opacity={1}
+              lightLineColor="#e5e5e5"
+              darkLineColor="#404040"
+            />
           </TooltipProvider>
         </ThemeProvider>
       </body>
