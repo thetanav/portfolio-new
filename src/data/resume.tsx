@@ -36,7 +36,6 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: Home, label: "Home" },
-    { href: "/blog", icon: Rss, label: "Blog" },
     { href: "https://dub.sh/tanav-resume", icon: Notebook, label: "Resume" },
   ],
   contact: {
@@ -64,17 +63,10 @@ export const DATA = {
 
         navbar: true,
       },
-      "Buy me a Coffee": {
-        name: "Buy me a Coffee",
-        url: "https://coff.ee/tanav",
-        icon: Coffee,
-
-        navbar: true,
-      },
-      Email: {
-        name: "Send Email",
-        url: "mailto:tanavposwal939@example.com",
-        icon: Icons.email,
+      Leetcode: {
+        name: "Leetcode",
+        url: "https://dub.sh/tanav-leetcode",
+        icon: Icons.leetcode,
 
         navbar: true,
       },
